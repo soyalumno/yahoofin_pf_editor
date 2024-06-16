@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Yahoo Finance Portfolio Editor",
+  "version": "1.0.1",
+  "description": "証券会社のCSVやマネーフォワードの資産ページから、ヤフーファイナンスのポートフォリオを一括反映",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://finance.yahoo.co.jp/portfolio/detail?*"],
+      "js": ["js/content.js"],
+      "css": ["css/content.css"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
